@@ -7,11 +7,10 @@
 
 body {
     min-height: 100vh;
-    height: 100vh;
     background: linear-gradient(to bottom, #9bbcdb, #244572);
-    background-attachment: fixed;
-    position: relative;
+    background-size: cover;
     overflow-x: hidden;
+    position: relative;
 }
 
 body::after {
@@ -25,7 +24,7 @@ body::after {
         to bottom,
         transparent 0px,
         transparent 2px,
-        rgba(0, 0, 0, 0.08) 5px,
+        rgba(0, 0, 0, 0.08) 5px, /* keep this size the half of the other size (10px would be 5px) */
         rgba(0, 0, 0, 0.08) 10px
     );
     pointer-events: none;
@@ -36,12 +35,13 @@ body::after {
     display: block;
     width: 90%;
     max-width: 600px;
-    margin: 0 auto;
-    padding-top: 20px;
+    margin: 20px auto; 
 }
 
+/* Logo image */
 .logo-link img {
     width: 100%;
     height: auto;
     display: block;
+    max-height: 80vh; 
 }
