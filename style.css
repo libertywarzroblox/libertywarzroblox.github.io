@@ -7,6 +7,8 @@
 
 body {
     min-height: 100vh;
+    min-height: 100dvh; 
+    margin: 0;
     background: linear-gradient(to bottom, #9bbcdb, #244572);
     background-size: cover;
     overflow-x: hidden;
@@ -19,12 +21,12 @@ body::after {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100dvh; 
     background: repeating-linear-gradient(
         to bottom,
         transparent 0px,
         transparent 2px,
-        rgba(0, 0, 0, 0.08) 5px, /* keep this size the half of the other size (10px would be 5px) */
+        rgba(0, 0, 0, 0.08) 5px,
         rgba(0, 0, 0, 0.08) 10px
     );
     pointer-events: none;
