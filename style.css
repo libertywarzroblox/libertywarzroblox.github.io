@@ -5,23 +5,29 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
 body {
-    min-height: 100vh;
-    min-height: 100dvh; 
-    margin: 0;
-    background: linear-gradient(to bottom, #9bbcdb, #244572);
-    background-size: cover;
-    overflow-x: hidden;
     position: relative;
+    overflow-x: hidden;
+    background: #244572;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, #9bbcdb 0%, #244572 100%);
+    z-index: -2;
 }
 
 body::after {
-    content: '';
+    content: "";
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh; 
+    inset: 0;
     background: repeating-linear-gradient(
         to bottom,
         transparent 0px,
@@ -30,20 +36,61 @@ body::after {
         rgba(0, 0, 0, 0.08) 10px
     );
     pointer-events: none;
-    z-index: 999;
+    z-index: -1;
+}
+
+.button-retro {
+    display: inline-block;
+    padding: 12px 28px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #9bbcdb 0%, #244572 100%);
+    border: 2px solid #ffffff;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.button-retro::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(255, 255, 255, 0.08) 5px,
+        rgba(255, 255, 255, 0.08) 10px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.button-retro:hover {
+    color: #93ddff;
+    transform: scale(1.05);
+    border-color: #93ddff;
+}
+
+.button-retro span {
+    position: relative;
+    z-index: 1;
 }
 
 .logo-link {
     display: block;
     width: 90%;
     max-width: 600px;
-    margin: 20px auto; 
+    margin: 20px auto 0;
 }
 
-/* Logo image */
 .logo-link img {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 80vh; 
 }
